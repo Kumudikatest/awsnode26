@@ -4,7 +4,7 @@ const cognito_idp = new AWS.CognitoIdentityServiceProvider();
 exports.handler = async (event) => {
     try {
         let data = await cognito_idp.listUsers({
-            UserPoolId: "us-east-1_HdYJb7Znp",
+            UserPoolId: process.env.UserPoolId_cognitoKohiocog,
             Limit: 10
         }).promise();
         console.log(data);
